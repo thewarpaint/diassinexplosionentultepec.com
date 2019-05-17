@@ -12,14 +12,23 @@ permalink: /
 
     <title>{{ postTitle }}</title>
 
-    <!-- Twitter meta tags, missing: twitter:description, twitter:image, twitter:site -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ postTitle }}">
+    <!-- Twitter meta tags, missing: twitter:description, twitter:site -->
+    <meta name="twitter:card"
+          content="summary">
+    <meta name="twitter:title"
+          content="{{ postTitle }}">
+    <meta name="twitter:image"
+          content="{{ site.url }}/assets/images/fireworks-by-kumar-appaiah--50.jpg">
 
-    <!-- Open Graph (Facebook) meta tags, missing: og:image -->
-    <meta property="og:title" content="{{ postTitle }}">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://diassinexplosionentultepec.com">
+    <!-- Open Graph (Facebook) meta tags -->
+    <meta property="og:title"
+          content="{{ postTitle }}">
+    <meta property="og:type"
+          content="article">
+    <meta property="og:url"
+          content="https://diassinexplosionentultepec.com">
+    <meta property="og:image"
+          content="{{ site.url }}/assets/images/fireworks-by-kumar-appaiah--50.jpg">
 
     <link href="{{ site.url }}/assets/css/main.css"
           rel="stylesheet">
