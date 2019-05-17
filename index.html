@@ -76,6 +76,25 @@ permalink: /
         font-weight: 700;
       }
 
+      .tweet-link {
+        display: inline-block;
+        padding: .875rem 1.5rem;
+        margin-bottom: 2rem;
+        transition: .25s background;
+        color: white;
+        background-color: #2196f3; /* Blue 500 */
+        border-radius: 5rem;
+        font-size: 1.125rem;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .tweet-link:hover {
+        background-color: #1976d2; /* Blue 700 */
+      }
+
       .timeline-container {
         margin: auto;
         max-width: 1200px; /* From iframe content */
@@ -120,8 +139,16 @@ permalink: /
         document.getElementById('days').textContent = days;
       }
 
+      function updateTweetHref(days) {
+        document.getElementById('tweet-link').href = 'https://twitter.com/intent/tweet?text=' +
+          encodeURIComponent('Días sin explosión en Tultepec: ' + days + ' https://diassinexplosionentultepec.com');
+      }
+
       document.addEventListener('DOMContentLoaded', function (event) {
-        updateDays(getDiffInDaysFromNow(getDateObjectFromString(lastExplosion)));
+        var days = getDiffInDaysFromNow(getDateObjectFromString(lastExplosion));
+
+        updateDays(days);
+        updateTweetHref(days);
       });
     </script>
   </head>
@@ -132,6 +159,12 @@ permalink: /
 
       <h2 id="days"
           class="days">0</h2>
+
+      <a href="https://twitter.com/intent/tweet"
+         class="tweet-link"
+         id="tweet-link"
+         target="_blank"
+         rel="noopener">Comparte en Twitter</a>
 
       <div class="timeline-container">
         <!-- From https://publish.twitter.com/ { -->
